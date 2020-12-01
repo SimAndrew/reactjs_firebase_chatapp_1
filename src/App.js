@@ -8,19 +8,22 @@ import SignIn from "./pages/SignIn";
 import PrivateRoute from "./components/PrivateRoute";
 import Home from "./pages/Home";
 import PublicRoute from "./components/PublicRoute";
+import {ProfileProvider} from "./context/profile.context";
 // https://rsuitejs.com/ // ui library
 
 function App() {
   return (
-    <Switch>
-        <PublicRoute path="/signin">
-            <SignIn />
-        </PublicRoute>
+      <ProfileProvider>
+        <Switch>
+            <PublicRoute path="/signin">
+                <SignIn />
+            </PublicRoute>
 
-        <PrivateRoute path="/">
-            <Home />
-        </PrivateRoute>
-    </Switch>
+            <PrivateRoute path="/">
+                <Home />
+            </PrivateRoute>
+        </Switch>
+      </ProfileProvider>
   );
 }
 
