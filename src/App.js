@@ -6,7 +6,7 @@ import 'rsuite/dist/styles/rsuite-default.css';
 import {Switch} from "react-router";
 import SignIn from "./pages/SignIn";
 import PrivateRoute from "./components/PrivateRoute";
-import Home from "./pages/Home";
+import Index from "./pages/Home";
 import PublicRoute from "./components/PublicRoute";
 import {ProfileProvider} from "./context/profile.context";
 // https://rsuitejs.com/ // ui library
@@ -20,7 +20,7 @@ function App() {
             </PublicRoute>
 
             <PrivateRoute path="/">
-                <Home />
+                <Index />
             </PrivateRoute>
         </Switch>
       </ProfileProvider>
